@@ -19,6 +19,11 @@ function ContactList() {
                 name={"Rick"}
                 department={"QA"}
             />
+            <ContactItem
+                login={"typeofweb4@pl"}
+                name={"Emyl"}
+                department={"E-Mailing Team"}
+            />
         </div>
     );
 }
