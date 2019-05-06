@@ -1,31 +1,16 @@
 import React from 'react';
 import './App.css';
-
-import SimpleComponent from "./trial-components/SimpleComponent";
-import ComponentWithProps from "./trial-components/ComponentWithProps";
+import AppHeader from "./components/AppHeader";
+import ContactList from "./components/ContactList";
 
 function App() {
     return (
         <div className="App">
-            <SimpleComponent/>
-            <ComponentWithProps title={TitleFunc()} content={ContentFunc()}/>
+            <AppHeader/>
+            <main className={"ui main text container"}>
+                <ContactList/>
+            </main>
         </div>
-    );
-}
-
-function TitleFunc() {
-    return (
-        <h2>
-            Title from function.
-        </h2>
-    );
-}
-
-function ContentFunc() {
-    return (
-        <p>
-            Content from function.
-        </p>
     );
 }
 
