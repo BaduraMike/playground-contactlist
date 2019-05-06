@@ -1,10 +1,10 @@
 import React from 'react';
+import Avatar from "./Avatar";
 
 function ContactItem({login, name, department}) {
-    const imgUrl = 'https://api.adorable.io/avatars/55/' + login + '.png';
     return (
         <li className={"item"}>
-            <img src={imgUrl} alt={"Contact face."} className={"ui mini rounded image"}/>
+            <Avatar login={login} />
             <div className={"content"}>
                 <h4 className={"header"}>{name}</h4>
                 <div className={"description"}>{department}</div>
