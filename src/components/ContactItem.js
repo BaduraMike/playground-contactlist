@@ -18,10 +18,8 @@ class ContactItem extends Component {
                         </div>
                     </li>
                 </div>
-                <div className={"middle aligned column"}>
                     <Counter/>
                 </div>
-            </div>
         );
     }
 }
