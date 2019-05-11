@@ -14,35 +14,52 @@ class Counter extends Component {
 
         return (
             <div className={"middle aligned columns"}>
-                <p><br/>
-                    <div className={"ui buttons"}>
-                        <button className={"ui animated button"}
-                                onClick={this.clickIncrement.bind(this)}
-                                onDoubleClick={this.doubleClickIncrement.bind(this)}>
-                            <div className={"visible content"}>Like</div>
-                            <div className={"hidden content"}>
-                                <i className={"plus icon"}/>
-                            </div>
-                        </button>
-                        <div className={"or"}/>
-                        <button className={"ui animated button"}
-                                onClick={this.clickDecrement.bind(this)}
-                                onDoubleClick={this.doubleClickDecrement.bind(this)}>
-                            <div className={"visible content"}>Dislike</div>
-                            <div className={"hidden content"}>
-                                <i className={"minus icon"}/>
-                            </div>
-                        </button>
+                <br/>
+                <div className={"ui buttons"}>
+                    <button className={"ui animated button"}
+                            onClick={this.clickIncrement.bind(this)}
+                            onDoubleClick={this.doubleClickIncrement.bind(this)}>
+                        <div className={"visible content"}>Like</div>
+                        <div className={"hidden content"}>
+                            <i className={"plus icon"}/>
+                        </div>
+                    </button>
+                    <div className={"or"}/>
+                    <button className={"ui animated button"}
+                            onClick={this.clickDecrement.bind(this)}
+                            onDoubleClick={this.doubleClickDecrement.bind(this)}>
+                        <div className={"visible content"}>Dislike</div>
+                        <div className={"hidden content"}>
+                            <i className={"minus icon"}/>
+                        </div>
+                    </button>
+                </div>
+                <br/><br/>
+                <div className="ui mini statistics">
+                    <div className="statistic">
+                        <div className="value">
+                            {this.state.sumCounter}
+                        </div>
+                        <div className="label">
+                            Social status
+                        </div>
                     </div>
-                </p>
-                <div className={"ui label"}>
-                    <p>Current social status: {this.state.sumCounter}</p>
-                </div>
-                <div className={"ui label"}>
-                    <p>All reactions: {this.state.totalCounter}</p>
-                </div>
-                <div className={"ui label"}>
-                    <p>Nervous reactions: {this.state.doubleClickCounter}</p>
+                    <div className="statistic">
+                        <div className="value">
+                            {this.state.totalCounter}
+                        </div>
+                        <div className="label">
+                            All reactions
+                        </div>
+                    </div>
+                    <div className="statistic">
+                        <div className="value">
+                            {this.state.doubleClickCounter}
+                        </div>
+                        <div className="label">
+                            Nervous reactions
+                        </div>
+                    </div>
                 </div>
             </div>
         );
