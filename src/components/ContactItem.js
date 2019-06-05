@@ -8,7 +8,7 @@ class ContactItem extends Component {
     constructor(props) {
     super(props);
         this.state = {
-        mark: ''
+        mark: 0
         }
     }
 

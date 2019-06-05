@@ -1,27 +1,33 @@
 import React, {Component} from 'react';
+import RatingModifier from "./RatingModifier";
 
 class Rating extends Component {
     constructor(props) {
         super(props);
-        this.state = {mark: 0};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.clickIncrement = this.clickIncrement.bind(this);
+
+        this.state = {
+            mark: 0
+        };
     }
 
     render() {
         return (
             <div>
+                <RatingModifier buttonAction = {this.clickIncrement} />
                 <div className="ui form">
-                    <div className="field">
-                        <label>Rating</label>
-                    </div>
+                        <label>Type suggested rating: </label>
                     <div className={"ui icon input"}>
-                    <input type={"text"}
+                    <input type={"number"}
                            name={"mark"}
-                           placeholder="Propose your rating."
                            value={this.state.mark}
-                           onChange={this.handleChange.bind(this)}
+                           onChange={this.handleChange}
                     />
                     <i className={"inverted circular check link icon"}
-                       onClick={this.onSubmit.bind(this)}/>
+                       onClick={this.onSubmit}/>
                     </div>
                 </div>
             </div>
@@ -30,7 +36,7 @@ class Rating extends Component {
 
     handleChange({target}) {
         this.setState({
-            [target.name]: target.value
+            [target.name]: parseInt(target.value)
         });
     }
 
@@ -38,6 +44,12 @@ class Rating extends Component {
         this.props.handleData(this.state.mark);
     };
 
+    clickIncrement() {
+        this.setState({
+            mark: this.state.mark + 1
+        }, () => {
+        });
+    }
 }
 
 export default Rating;
